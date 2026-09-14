@@ -1,0 +1,234 @@
+/* 기본 리셋 및 전역 스타일 정의 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Pretendard, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  background-color: #f4f6f9;
+  color: #333333;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* 헤더 스타일 */
+.header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 28px;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* 파일 업로드 컨트롤 스타일 */
+.upload-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: 24px;
+}
+
+.upload-section input[type="file"] {
+  display: none; /* 기본 input 태그 감추기 */
+}
+
+.file-label {
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.file-label:hover {
+  background-color: #1d4ed8;
+}
+
+.file-name {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* 요약 카드 그리드 스타일 */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #2563eb;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.card .card-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+/* 차트 그리드 스타일 */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 500px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chart-box {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.chart-box h2 {
+  font-size: 16px;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.bar-chart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 150px;
+}
+
+.placeholder-text {
+  color: #94a3b8;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* 순수 HTML/CSS 막대 차트 행(Row) 스타일 */
+.bar-row {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+
+.bar-label {
+  width: 100px;
+  font-weight: 600;
+  color: #475569;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bar-track {
+  flex: 1;
+  background-color: #f1f5f9;
+  border-radius: 4px;
+  height: 22px;
+  margin: 0 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar-fill {
+  background-color: #3b82f6;
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease-in-out;
+}
+
+.bar-value {
+  width: 50px;
+  text-align: right;
+  font-weight: bold;
+  color: #1e293b;
+}
+
+/* 데이터 테이블 스타일 */
+.table-section {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.table-section h2 {
+  font-size: 16px;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  max-height: 400px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+
+th, td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* 판정 결과가 NG인 경우 행 배경색 스타일 처리 */
+tr.ng-row {
+  background-color: #fef2f2 !important; /* 연한 빨간색 강조 */
+  color: #991b1b;
+}
+
+tr.ng-row td {
+  border-bottom-color: #fecaca;
+}
